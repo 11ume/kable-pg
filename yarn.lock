@@ -403,7 +403,8 @@ isexe@^2.0.0:
 
 "kable@https://github.com/11ume/kable.git":
   version "0.0.2"
-  resolved "https://github.com/11ume/kable.git#6910410948945d06f80a99feb198a04da905db2f"
+  uid b6c87d048c781c755d0e081e07abcf1adb78d3da
+  resolved "https://github.com/11ume/kable.git#b6c87d048c781c755d0e081e07abcf1adb78d3da"
   dependencies:
     "@msgpack/msgpack" "^1.9.3"
     "@types/node" "^13.1.0"
