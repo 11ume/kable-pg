@@ -1,0 +1,14 @@
+{
+  "name": "kable-mongo",
+  "version": "0.0.1",
+  "description": "Kable node for PostgreSQL",
+  "main": "algo.js",
+  "bin": {
+    "kable": "./bin/kable.js"
+  },
+  "dependencies": {
+    "arg": "^4.1.2",
+    "kable": "https://github.com/11ume/kable.git",
+    "pg": "^7.17.0"
+  }
+}
