@@ -2,7 +2,7 @@
   "name": "kable-pg",
   "version": "0.0.1",
   "description": "Kable node for PostgreSQL",
-  "main": "algo.js",
+  "main": "main.js",
   "bin": {
     "kable": "./bin/kable.js"
   },

@@ -1,18 +1,7 @@
 const pg = require('pg')
 const kable = require('kable')
-const uriParser = require('pg-connection-string/index').parse
 const { description } = require('./package.json')
-
-const parseUri = (uri) => {
-    const parse = uriParser(uri)
-    return {
-        host: parse.host
-        , user: parse.user
-        , port: parse.port
-        , database: parse.database
-        , password: parse.password
-    }
-}
+const { parseUri } = require('./lib/utils')
 
 function retry(k, options, config, client = null) {
     const call = () => {
@@ -65,16 +54,16 @@ function run({
         , description
     }
 
-    const parse = parseUri(uri)
+    const parsed = parseUri(uri)
     const options = {
-        host: parse.host
-        , port: parse.port
+        host: parsed.host
+        , port: parsed.port
         , waitToRetryTime
     }
 
     const k = kable(id, {
-        host: parse.host
-        , port: parse.port
+        host: parsed.host
+        , port: parsed.port
         , key
         , meta
         , verbose
