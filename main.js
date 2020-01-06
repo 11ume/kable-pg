@@ -6,7 +6,7 @@ const { parseUri } = require('./lib/utils')
 function retry(k, options, config, client = null) {
     const call = () => {
         client && client.end()
-        k.doingSomething(`Retrying connect to the server in ${options.host}:${options.port}`)
+        k.doing(`Retrying connect to the server in ${options.host}:${options.port}`)
         connect(k, options, config, client)
     }
 
@@ -70,7 +70,7 @@ function run({
     })
 
     return k.run(false).then(() => {
-        k.doingSomething('Starting')
+        k.doing('Starting')
         connect(k, options, config)
         return k
     })
