@@ -9,14 +9,13 @@ const args = arg({
     '--help': Boolean
     , '-h': '--help'
     , '--version': Boolean
+    , '-v': '--version'
     , '--uri': String
     , '-u': '--uri'
     , '--id': String
     , '-i': '--id'
     , '--key': String
     , '-k': '--key'
-    , '--verbose': Boolean
-    , '-v': '--verbose'
     , '--ssl': Boolean
     , '-s': '--ssl'
     , '--statement_timeout': Number
@@ -34,8 +33,7 @@ if (args['--help']) {
         $ kable -u <pg_uri>
     OPTIONS
         --help                              shows this help message
-        --version                           displays the current used version
-        -v, --verbose                       start kable in verbose mode
+        -v  --version                       displays the current used version
         -u, --uri <pg_uri>                  specify a URI of connection
         -i, --id <node id>                  specify a unique id to indentificate this node
         -k, --key <key>                     specify a 32 character key to ensure the communication between all connected nodes
@@ -93,7 +91,6 @@ async function start() {
         uri: args['--uri']
         , id: args['--id']
         , key: args['--key']
-        , verbose: args['--verbose']
         , ssl: args['--ssl']
         , statementTimeout: args['--statement_timeout']
         , queryTimeout: args['--query_timeout']

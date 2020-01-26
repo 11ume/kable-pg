@@ -34,7 +34,6 @@ function connect(k, options, config) {
 function run({
     id
     , key = null
-    , verbose = false
     , waitToRetryTime = 2000
     , uri
     , ssl
@@ -66,10 +65,9 @@ function run({
         , port: parsed.port
         , key
         , meta
-        , verbose
     })
 
-    return k.run(false).then(() => {
+    return k.up(false).then(() => {
         k.doing('Starting')
         connect(k, options, config)
         return k
