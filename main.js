@@ -1,5 +1,5 @@
 const pg = require('pg')
-const kable = require('kable')
+const kable = require('kable-core')
 const { description } = require('./package.json')
 const { parseUri } = require('./lib/utils')
 
