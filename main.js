@@ -23,7 +23,6 @@ function connect(k, options, config) {
 
         k.start()
     })
-
     client.on('error', (err) => {
         if (k.state === 'STOPPED') return
         k.stop(err.message)
@@ -40,26 +39,22 @@ function run({
     , queryTimeout
     , statementTimeout
 }) {
-
     const config = {
         connectionString: uri
         , ssl
         , statement_timeout: statementTimeout
         , query_timeout: queryTimeout
     }
-
     const meta = {
         id: 'pg-node'
         , description
     }
-
     const parsed = parseUri(uri)
     const options = {
         host: parsed.host
         , port: parsed.port
         , waitToRetryTime
     }
-
     const k = kable(id, {
         host: parsed.host
         , port: parsed.port
