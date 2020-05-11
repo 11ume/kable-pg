@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "arg": "^4.1.2",
-    "pg": "^7.17.0",
+    "pg": "^8.1.0",
     "kable-core": "https://github.com/11ume/kable-core.git"
   }
 }
